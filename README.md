@@ -22,6 +22,27 @@ cd ctraubot
 python -m venv {path_to_your_virtualenvs}/ctraubot-nlu
 ln -s {path_to_your_virtualenvs}/ctraubot-nlu .venv
 pipenv install
+pipenv run install_spacy_model
 ```
+
+# Train NLU
+
+```bash
+pipenv run python -m ctraubot_nlu.main -c train_nlu
+```
+
+# Run as HTTP server and Test
+Starting the Rasa NLU as a HTTP server
+
+```bash
+pipenv run python -m rasa_nlu.server --path models
+```
+
+Sending a HTTP request
+
+```bash
+curl -X POST localhost:5000/parse -d '{"q": "Hi", "project": "ctraubot", "model": "nlu"}' | python -m json.tool
+```
+
 
 

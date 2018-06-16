@@ -4,8 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+rasa_nlu = "*"
+spacy = "*"
+sklearn_crfsuite = "*"
+scikit-learn = "*"
+scipy = "*"
+coloredlogs = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.6"
+
+[scripts]
+install_spacy_model = "/bin/bash scripts/install-spacy-models.sh"
