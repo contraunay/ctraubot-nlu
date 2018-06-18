@@ -41,7 +41,7 @@ pipenv run python -m rasa_nlu.server --path models
 Sending a HTTP request
 
 ```bash
-curl -X POST localhost:5000/parse -d '{"q": "Hi", "project": "ctraubot", "model": "nlu"}' | python -m json.tool
+curl -X POST localhost:5000/parse -d '{"q": "Hi bot", "project": "ctraubot", "model": "nlu"}' | python -m json.tool
 ```
 
 

@@ -6,7 +6,7 @@ def train_nlu():
 	from pathlib import Path
 
 	training_data = load_data('training_data/general-chat.md')
-	trainer = Trainer(config.load("training_data/config_spacy_sklearn.yaml"))
+	trainer = Trainer(config.load("training_data/config_tensorflow_embedding.yaml"))
 	trainer.train(training_data)
 	model_directory = trainer.persist(Path('.').parent/"models",
                             project_name='ctraubot',
